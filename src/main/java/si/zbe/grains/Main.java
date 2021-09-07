@@ -21,7 +21,6 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        checkDependentPlugins();
         LanguageManager.setupLanguages();
         setConfig();
         registerEvents();
@@ -76,12 +75,6 @@ public class Main extends JavaPlugin {
                 plugin.getServer().addRecipe(recipe);
             }
             if (debug) getLogger().info("Carpet recipe has been loaded.");
-        }
-    }
-
-    private void checkDependentPlugins() {
-        if (getServer().getPluginManager().getPlugin("ProtocolLib") == null) {
-            getLogger().info("ProtocolLib is not installed. Please install ProtocolLib for Grains to work correctly.");
         }
     }
 }

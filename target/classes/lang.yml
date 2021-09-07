@@ -6,7 +6,6 @@ plugin:
   grains:
     info: "Grains admin commands:"
     reload: " - /grs reload -> Reloads Grains config files."
-    reload-success: "Configuration and language file reloaded successfully."
 workbench:
   wrong-item: "You need to have a crafting table in your main hand."
   lore: "A to-go crafting table."

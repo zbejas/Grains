@@ -41,6 +41,8 @@ public class GrainsCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args[0].equalsIgnoreCase("version")) {
+            Main.plugin.reloadConfig();
+            LanguageManager.reloadLanguage();
             sender.sendMessage(ChatColor.GREEN + "Grains version: " + ChatColor.GOLD + Main.plugin.getDescription().getVersion());
             return true;
         }
