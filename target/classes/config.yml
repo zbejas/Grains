@@ -1,0 +1,6 @@
+plugin:
+  debug: false
+recipes:
+  chest: true
+  melon: true
+  carpet: true

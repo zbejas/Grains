@@ -1,0 +1,38 @@
+name: Grains
+main: si.zbe.grains.Main
+author: TheZbe
+description: 'Minecraft improved.'
+api-version: 1.17
+version: 0.0.1
+commands:
+  workbench:
+    description: 'Gives player a portable workbench.'
+    usage: /<command>
+    aliases: wb
+  grains:
+    description: 'Grains admin commands.'
+    usage: /<command>
+    aliases: grs
+permissions:
+  grains.*:
+    description: 'Control the grain.'
+    default: op
+    children:
+      grains.admin: true
+      grains.crops: true
+      grains.armor: true
+      grains.workbench: true
+  grains.admin:
+    description: 'Grains admin commands.'
+    default: op
+  grains.crops:
+    description: 'Harvests crops on right click.'
+    default: true
+  grains.armor:
+    description: 'Replaces armor on right-click.'
+    default: true
+  grains.workbench:
+    description: 'Gives player a portable workbench.'
+    default: op
+
+
