@@ -4,10 +4,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import si.zbe.grains.commands.GrainsCommand;
 import si.zbe.grains.commands.WorkbenchCommand;
-import si.zbe.grains.events.ArmorEvent;
-import si.zbe.grains.events.CropHarvestEvent;
-import si.zbe.grains.events.LeashEvent;
-import si.zbe.grains.events.WorkbenchEvent;
+import si.zbe.grains.events.*;
 import si.zbe.grains.recipes.CarpetRecipe;
 import si.zbe.grains.recipes.ChestRecipe;
 import si.zbe.grains.recipes.MelonRecipe;
@@ -21,6 +18,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        checkPluginDependencies();
         LanguageManager.setupLanguages();
         setConfig();
         registerEvents();
@@ -45,6 +43,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorEvent(), this);
         getServer().getPluginManager().registerEvents(new LeashEvent(), this);
         getServer().getPluginManager().registerEvents(new WorkbenchEvent(), this);
+        getServer().getPluginManager().registerEvents(new InventoryFullEvent(), this);
     }
 
     private void registerCommands() {
@@ -75,6 +74,12 @@ public class Main extends JavaPlugin {
                 plugin.getServer().addRecipe(recipe);
             }
             if (debug) getLogger().info("Carpet recipe has been loaded.");
+        }
+    }
+
+    private void checkPluginDependencies() {
+        if(getServer().getPluginManager().getPlugin("ProtocolLib") == null) {
+            getLogger().info("ProtocolLib is not installed. Please install ProtocolLib for Grains to work as intended.");
         }
     }
 }

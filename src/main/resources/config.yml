@@ -4,3 +4,5 @@ recipes:
   chest: true
   melon: true
   carpet: true
+events:
+  full-inventory: true

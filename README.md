@@ -11,6 +11,7 @@ Its features include:
 * Additional helpful recipes
 * Portable crafting table
 
+**Grains depends on [ProtocolLib](https://github.com/dmulloy2/ProtocolLib).**
 
 Usage
 ---

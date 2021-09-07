@@ -18,7 +18,9 @@ public class LanguageManager {
     private static FileConfiguration langConfig = YamlConfiguration.loadConfiguration(langYml);
 
     public static String get(String key) {
-        return langConfig.getString(key);
+        String str = langConfig.getString(key);
+        if (str == null) str = "No key found in lang.yml (" + key + ").";
+        return str;
     }
 
     public static void reloadLanguage() {
@@ -35,11 +37,7 @@ public class LanguageManager {
             langConfig = YamlConfiguration.loadConfiguration(langYml);
         } else {
             langConfig.options().copyDefaults(true);
-            try {
-                langConfig.save(langYml);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Main.plugin.saveResource("lang.yml", false);
         }
     }
 }
