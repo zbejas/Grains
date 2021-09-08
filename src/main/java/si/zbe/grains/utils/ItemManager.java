@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ItemManager {
     public static ItemStack workbench;
     public static ItemStack enderchest;
+    public static ItemStack compass;
 
     public static void init() {
         createWorkbench();

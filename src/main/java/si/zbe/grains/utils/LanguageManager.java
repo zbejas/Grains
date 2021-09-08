@@ -6,13 +6,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import si.zbe.grains.Main;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-
 
 public class LanguageManager {
-
-    HashMap<String, String> translationMap;
 
     private static File langYml = new File(Main.plugin.getDataFolder() + "/lang.yml");
     private static FileConfiguration langConfig = YamlConfiguration.loadConfiguration(langYml);
@@ -36,8 +31,8 @@ public class LanguageManager {
             langYml = new File(Main.plugin.getDataFolder() + "/lang.yml");
             langConfig = YamlConfiguration.loadConfiguration(langYml);
         } else {
-            langConfig.options().copyDefaults(true);
-            Main.plugin.saveResource("lang.yml", false);
+            //langConfig.options().copyDefaults(true);
+            //Main.plugin.saveResource("lang.yml", false);
         }
     }
 }

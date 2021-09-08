@@ -7,12 +7,14 @@ plugin:
     info: "Grains admin commands:"
     reload: " - /grs reload -> Reloads Grains config files."
     reload-success: "Configuration and language file reloaded successfully."
+compass:
+  reset: "[Grains] Your compass has been reset to default location."
 workbench:
-  wrong-item: "You need to have a crafting table in your main hand."
+  wrong-item: "[Grains] You need to have a crafting table in your main hand."
   lore: "A to-go crafting table."
   name: "Workbench"
 enderchest:
-  wrong-item: "You need to have an ender chest in your main hand."
+  wrong-item: "[Grains] You need to have an ender chest in your main hand."
   lore: "A to-go ender chest."
   name: "Ender Chest"
 events:

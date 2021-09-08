@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.Main;
 import si.zbe.grains.utils.LanguageManager;
 
-public class InventoryFullEvent implements Listener {
+public class InventoryFull implements Listener {
         @EventHandler
         public void onPickUp(BlockBreakEvent e) {
             if (!Main.plugin.getConfig().getBoolean("events.full-inventory")) {

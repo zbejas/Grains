@@ -10,6 +10,7 @@ Its features include:
 * Right-click armor switch
 * Additional helpful recipes
 * Portable crafting table
+* Portable ender chest
 
 **Grains depends on [ProtocolLib](https://github.com/dmulloy2/ProtocolLib).**
 
@@ -25,6 +26,7 @@ How it works
 ---
 #### Crop harvest
 Right-click harvests and replants the crop with (if available) a seed from the drop. If a seed is not available in the drop, it takes one from the players inventory.
+It also works on cocoa.
 
 ![Gif broken](https://i.imgur.com/mdzpzh4.gif)
 
@@ -32,7 +34,7 @@ Right-click harvests and replants the crop with (if available) a seed from the d
 
 #### Custom recipes
 I have added a bunch of useful custom recipes to improve overall gameplay.
-
+They can be found in the crafting book.
 _**Chest from logs**_
 You can craft 4 chests from any kind of log.
 
@@ -47,6 +49,11 @@ _**Dying carpets**_
 You can now dye 8 carpets with a single dye.
 
 ![Gif broken](https://i.imgur.com/I2jkEPe.gif)
+
+_**Additional**_ *(images comming soon)*
+* Hopper Minecart
+* Chest Minecart
+* Powered Minecart
 
 ---
 

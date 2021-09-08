@@ -7,7 +7,10 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Ageable;
+import org.bukkit.block.data.Directional;
+import org.bukkit.block.data.type.Cocoa;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,7 +22,7 @@ import si.zbe.grains.Main;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class CropHarvestEvent implements Listener {
+public class CropHarvest implements Listener {
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
         Block block = e.getClickedBlock();
@@ -34,7 +37,7 @@ public class CropHarvestEvent implements Listener {
 
     public boolean isCrop(Material m) {
         return m == Material.WHEAT || m == Material.POTATOES || m == Material.CARROTS || m == Material.BEETROOTS
-                || m == Material.NETHER_WART;
+                || m == Material.NETHER_WART || m == Material.COCOA;
     }
 
     public Material getSeed(Material m) {
@@ -48,6 +51,8 @@ public class CropHarvestEvent implements Listener {
             return Material.BEETROOT_SEEDS;
         else if (m == Material.NETHER_WART)
             return Material.NETHER_WART;
+        else if (m == Material.COCOA)
+            return Material.COCOA_BEANS;
         else
             return Material.AIR;
     }
@@ -63,6 +68,7 @@ public class CropHarvestEvent implements Listener {
 
     public void harvestCrop(Material m, PlayerInteractEvent e) {
         Block block = e.getClickedBlock();
+
         if (isCrop(m)) {
             if (!e.getPlayer().hasPermission("grains.crops")) {
                 return;
@@ -98,12 +104,28 @@ public class CropHarvestEvent implements Listener {
 
             sendServerPacket(pm, e.getPlayer(), handAnimation);
 
+            BlockFace blockFace = ((Directional) block.getBlockData()).getFacing();
 
             //TODO: Replace with something that doesnt ignore protection
             //Main.plugin.getServer().getPluginManager().callEvent(new BlockBreakEvent(block, e.getPlayer()));
+
+            // Cocoa needs directions
+            if (block.getType() == Material.COCOA) {
+                Cocoa cocoa = (Cocoa) block.getBlockData();
+                Cocoa smallCocoa = (Cocoa) cocoa.clone();
+                smallCocoa.setAge(0);
+                smallCocoa.setFacing(cocoa.getFacing());
+                block.breakNaturally();
+                block.setBlockData(smallCocoa);
+
+                return;
+            }
+
             block.breakNaturally();
 
             block.setType(m);
+
+
         }
     }
 }

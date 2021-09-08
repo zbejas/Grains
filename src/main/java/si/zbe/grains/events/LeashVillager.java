@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.Main;
 
-public class LeashEvent implements Listener {
+public class LeashVillager implements Listener {
     @EventHandler
     public void onVillagerLeash(PlayerInteractEntityEvent e) {
         if (e.getRightClicked().getType() != EntityType.VILLAGER)

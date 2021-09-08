@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class GrainsCommand implements CommandExecutor, TabCompleter {
+public class Grains implements CommandExecutor, TabCompleter {
 
     private final Main plugin;
 
-    public GrainsCommand(Main plugin) {
+    public Grains(Main plugin) {
         this.plugin = plugin;
     }
 
