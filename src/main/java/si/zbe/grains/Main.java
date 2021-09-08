@@ -2,12 +2,14 @@ package si.zbe.grains;
 
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
+import si.zbe.grains.commands.EnderChestCommand;
 import si.zbe.grains.commands.GrainsCommand;
 import si.zbe.grains.commands.WorkbenchCommand;
 import si.zbe.grains.events.*;
 import si.zbe.grains.recipes.CarpetRecipe;
 import si.zbe.grains.recipes.ChestRecipe;
 import si.zbe.grains.recipes.MelonRecipe;
+import si.zbe.grains.recipes.MinecartRecipe;
 import si.zbe.grains.utils.ItemManager;
 import si.zbe.grains.utils.LanguageManager;
 
@@ -43,11 +45,13 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorEvent(), this);
         getServer().getPluginManager().registerEvents(new LeashEvent(), this);
         getServer().getPluginManager().registerEvents(new WorkbenchEvent(), this);
+        getServer().getPluginManager().registerEvents(new EnderChestEvent(), this);
         getServer().getPluginManager().registerEvents(new InventoryFullEvent(), this);
     }
 
     private void registerCommands() {
-        getCommand("workbench").setExecutor(new WorkbenchCommand(this));
+        getCommand("gworkbench").setExecutor(new WorkbenchCommand(this));
+        getCommand("genderchest").setExecutor(new EnderChestCommand(this));
 
         getCommand("grains").setExecutor(new GrainsCommand(this));
         getCommand("grains").setTabCompleter(new GrainsCommand(this));
@@ -74,6 +78,14 @@ public class Main extends JavaPlugin {
                 plugin.getServer().addRecipe(recipe);
             }
             if (debug) getLogger().info("Carpet recipe has been loaded.");
+        }
+
+        if (getConfig().getBoolean("recipes.minecart")) {
+            MinecartRecipe minecart = new MinecartRecipe();
+            plugin.getServer().addRecipe(minecart.getHopperRecipe());
+            plugin.getServer().addRecipe(minecart.getChestRecipe());
+            plugin.getServer().addRecipe(minecart.getFurnaceRecipe());
+            if (debug) getLogger().info("Minecart recipe has been loaded.");
         }
     }
 

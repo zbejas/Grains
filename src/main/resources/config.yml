@@ -4,5 +4,6 @@ recipes:
   chest: true
   melon: true
   carpet: true
+  minecart: true
 events:
   full-inventory: true

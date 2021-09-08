@@ -18,7 +18,8 @@ Usage
 Command | Aliases | Usage | Premission
 --- | --- | --- | ----
 /grains | /grs | Admin commands | grains.admin
-/workbench | /wb | Creates a portable crafting table | grains.workbench
+/gworkbench | /gwb | Creates a portable crafting table | grains.workbench
+/genderchest | /gec | Creates a portable ender chest | grains.enderchest
 
 How it works
 ---

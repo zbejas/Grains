@@ -5,10 +5,14 @@ description: 'Minecraft improved.'
 api-version: 1.17
 version: ${project.version}
 commands:
-  workbench:
+  gworkbench:
     description: 'Gives player a portable workbench.'
     usage: /<command>
-    aliases: wb
+    aliases: gwb
+  genderchest:
+    description: 'Gives player a portable ender chest.'
+    usage: /<command>
+    aliases: gec
   grains:
     description: 'Grains admin commands.'
     usage: /<command>
@@ -33,6 +37,9 @@ permissions:
     default: true
   grains.workbench:
     description: 'Gives player a portable workbench.'
+    default: op
+  grains.enderchest:
+    description: 'Gives player a portable enderchest.'
     default: op
 
 
