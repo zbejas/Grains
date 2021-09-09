@@ -3,6 +3,9 @@ plugin:
   disabled: "Grains is disabled."
   no-permission: "You do not have permission to use this command!"
   invalid-input: "Invalid input. Please check command help."
+  update: "[Grain] An update has been found! Verison: {0}"
+  update-latest: "[Grain] You are running the latest Grains version."
+  update-fail: "[Grain] Failed to check for updates."
   grains:
     info: "Grains admin commands:"
     reload: " - /grs reload -> Reloads Grains config files."

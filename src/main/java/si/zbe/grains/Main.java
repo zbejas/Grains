@@ -1,5 +1,6 @@
 package si.zbe.grains;
 
+import org.bstats.bukkit.Metrics;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import si.zbe.grains.commands.EnderChest;
@@ -12,6 +13,7 @@ import si.zbe.grains.recipes.MelonRecipe;
 import si.zbe.grains.recipes.MinecartRecipe;
 import si.zbe.grains.utils.ItemManager;
 import si.zbe.grains.utils.LanguageManager;
+import si.zbe.grains.utils.UpdateCheck;
 
 public class Main extends JavaPlugin {
 
@@ -29,6 +31,8 @@ public class Main extends JavaPlugin {
         registerCommands();
         registerRecipes();
         ItemManager.init();
+        UpdateCheck.init();
+        Metrics metrics = new Metrics(this, 12734);
         getLogger().info(LanguageManager.get("plugin.enabled"));
     }
 
@@ -47,7 +51,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorClick(), this);
         getServer().getPluginManager().registerEvents(new LeashVillager(), this);
         getServer().getPluginManager().registerEvents(new WorkbenchClick(), this);
-        getServer().getPluginManager().registerEvents(new si.zbe.grains.events.EnderChest(), this);
+        getServer().getPluginManager().registerEvents(new EnderChestClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryFull(), this);
     }
 

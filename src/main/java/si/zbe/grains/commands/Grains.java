@@ -8,6 +8,7 @@ import org.bukkit.command.TabCompleter;
 import si.zbe.grains.Main;
 import si.zbe.grains.utils.LanguageManager;
 import si.zbe.grains.utils.Messages;
+import si.zbe.grains.utils.UpdateCheck;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,6 +43,7 @@ public class Grains implements CommandExecutor, TabCompleter {
 
         if (args[0].equalsIgnoreCase("version")) {
             sender.sendMessage(ChatColor.GREEN + "Grains version: " + ChatColor.GOLD + Main.plugin.getDescription().getVersion());
+            sender.sendMessage(ChatColor.GREEN + "Latest version: " + ChatColor.GOLD + UpdateCheck.version);
             return true;
         }
 

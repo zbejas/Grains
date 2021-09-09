@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.utils.ItemManager;
 
-public class EnderChest implements Listener {
+public class EnderChestClick implements Listener {
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
         Player p = e.getPlayer();

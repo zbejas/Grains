@@ -23,6 +23,7 @@ import si.zbe.grains.Main;
 import java.lang.reflect.InvocationTargetException;
 
 public class CropHarvest implements Listener {
+
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
         Block block = e.getClickedBlock();
@@ -104,13 +105,12 @@ public class CropHarvest implements Listener {
 
             sendServerPacket(pm, e.getPlayer(), handAnimation);
 
-            BlockFace blockFace = ((Directional) block.getBlockData()).getFacing();
-
             //TODO: Replace with something that doesnt ignore protection
             //Main.plugin.getServer().getPluginManager().callEvent(new BlockBreakEvent(block, e.getPlayer()));
 
             // Cocoa needs directions
             if (block.getType() == Material.COCOA) {
+                BlockFace blockFace = ((Directional) block.getBlockData()).getFacing();
                 Cocoa cocoa = (Cocoa) block.getBlockData();
                 Cocoa smallCocoa = (Cocoa) cocoa.clone();
                 smallCocoa.setAge(0);

@@ -4,6 +4,7 @@ author: TheZbe
 description: 'Minecraft improved.'
 api-version: 1.17
 version: ${project.version}
+depend: [ProtocolLib]
 commands:
   gworkbench:
     description: 'Gives player a portable workbench.'

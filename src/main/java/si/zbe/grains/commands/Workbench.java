@@ -31,7 +31,7 @@ public class Workbench implements CommandExecutor {
 
         Player p = (Player) sender;
 
-        if (!p.hasPermission("grain.workbench")) {
+        if (!p.hasPermission("grains.workbench")) {
             p.sendMessage(ChatColor.RED + Messages.no_permission);
             return true;
         }

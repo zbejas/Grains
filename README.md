@@ -66,7 +66,7 @@ You can leash villagers! Just dont hang them, they are alive too!
 
 
 #### Crafting table
-Players can use **/workbench** to change a normal crafting table to a protable one. After that a crafting table is just a right-click away.
+Players can use **/workbench** to change a normal crafting table to a portable one. After that a crafting table is just a right-click away.
 
 ![Gif broken](https://i.imgur.com/GGpMHbm.gif)
 ---

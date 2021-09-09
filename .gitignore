@@ -9,6 +9,9 @@
 .idea/**/shelf
 .idea/
 
+# Custom
+dependency-reduced-pom.xml
+
 # AWS User-specific
 .idea/**/aws.xml
 
