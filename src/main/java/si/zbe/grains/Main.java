@@ -86,7 +86,7 @@ public class Main extends JavaPlugin {
             RedstoneRecipe rr = new RedstoneRecipe();
             plugin.getServer().addRecipe(rr.getRepeaterRecipe());
             plugin.getServer().addRecipe(rr.getHopperRecipe());
-            if (debug) getLogger().info("Workbench recipe has been loaded.");
+            if (debug) getLogger().info("Redstone recipe has been loaded.");
         }
 
         if (getConfig().getBoolean("recipes.carpet")) {
