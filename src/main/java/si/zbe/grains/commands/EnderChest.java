@@ -28,7 +28,7 @@ public class EnderChest implements CommandExecutor {
         Player p = (Player) sender;
 
         if (!p.hasPermission("grain.enderchest")) {
-            p.sendMessage(ChatColor.RED + Messages.no_permission);
+            p.sendMessage(ChatColor.RED + Messages.no_permission_command);
             return true;
         }
 
@@ -41,6 +41,8 @@ public class EnderChest implements CommandExecutor {
         } else {
             p.sendMessage(ChatColor.RED + LanguageManager.get("enderchest.wrong-item"));
         }
+
+        p.updateInventory();
 
         return true;
     }

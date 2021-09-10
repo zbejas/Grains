@@ -7,13 +7,7 @@ import java.net.URL;
 import java.text.MessageFormat;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.function.Consumer;
-
 import ca.fuzzlesoft.JsonParse;
-import com.google.gson.JsonArray;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import si.zbe.grains.Main;
 
 

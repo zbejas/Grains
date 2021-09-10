@@ -1,6 +1,8 @@
 package si.zbe.grains.utils;
 
 
+import com.comphenix.protocol.wrappers.nbt.NbtCompound;
+import com.comphenix.protocol.wrappers.nbt.NbtFactory;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -27,10 +29,9 @@ public class ItemManager {
         lore.add(ChatColor.GREEN + LanguageManager.get("workbench.lore"));
         itemmeta.setDisplayName(ChatColor.GOLD + LanguageManager.get("workbench.name"));
         itemmeta.setLore(lore);
-        itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        //itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.addUnsafeEnchantment(Enchantment.WATER_WORKER, 1);
         item.setItemMeta(itemmeta);
-
         workbench = item;
     }
     private static void createEnderChest() {
@@ -41,8 +42,16 @@ public class ItemManager {
         itemmeta.setDisplayName(ChatColor.GOLD + LanguageManager.get("enderchest.name"));
         itemmeta.setLore(lore);
         itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.addUnsafeEnchantment(Enchantment.LUCK, 1);
+        item.addUnsafeEnchantment(Enchantment.WATER_WORKER, 1);
         item.setItemMeta(itemmeta);
         enderchest = item;
+    }
+
+    public static void addGlow(ItemStack stack) {
+        if (stack == null) return;
+        NbtCompound compound = (NbtCompound) NbtFactory.fromItemTag(stack);
+        compound.put(NbtFactory.ofList("ench"));
+
+
     }
 }

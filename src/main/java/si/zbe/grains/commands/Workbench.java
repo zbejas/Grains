@@ -32,7 +32,7 @@ public class Workbench implements CommandExecutor {
         Player p = (Player) sender;
 
         if (!p.hasPermission("grains.workbench")) {
-            p.sendMessage(ChatColor.RED + Messages.no_permission);
+            p.sendMessage(ChatColor.RED + Messages.no_permission_command);
             return true;
         }
 
@@ -45,6 +45,8 @@ public class Workbench implements CommandExecutor {
         } else {
             p.sendMessage(ChatColor.RED + LanguageManager.get("workbench.wrong-item"));
         }
+
+        p.updateInventory();
 
         return true;
     }

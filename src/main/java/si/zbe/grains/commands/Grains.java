@@ -24,7 +24,7 @@ public class Grains implements CommandExecutor, TabCompleter {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!sender.hasPermission("grains.admin")) {
-            sender.sendMessage(ChatColor.RED + Messages.no_permission);
+            sender.sendMessage(ChatColor.RED + Messages.no_permission_command);
             return true;
         }
 

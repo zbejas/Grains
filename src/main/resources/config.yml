@@ -5,5 +5,7 @@ recipes:
   melon: true
   carpet: true
   minecart: true
+  workbench: true
+  redstone: true
 events:
   full-inventory: true

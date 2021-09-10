@@ -34,4 +34,13 @@ public class MinecartRecipe {
 
         return r;
     }
+
+    public ShapedRecipe getBoomRecipe() {
+        ShapedRecipe r = new ShapedRecipe(new NamespacedKey(Main.plugin, "minecart_tnt"), new ItemStack(Material.TNT_MINECART, 1));
+        r.shape("   ","wsw","www");
+        r.setIngredient('w', new RecipeChoice.MaterialChoice(Material.IRON_INGOT));
+        r.setIngredient('s', new RecipeChoice.MaterialChoice(Material.TNT));
+
+        return r;
+    }
 }

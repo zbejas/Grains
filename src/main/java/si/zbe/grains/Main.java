@@ -2,15 +2,13 @@ package si.zbe.grains;
 
 import org.bstats.bukkit.Metrics;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import si.zbe.grains.commands.EnderChest;
 import si.zbe.grains.commands.Grains;
 import si.zbe.grains.commands.Workbench;
 import si.zbe.grains.events.*;
-import si.zbe.grains.recipes.CarpetRecipe;
-import si.zbe.grains.recipes.ChestRecipe;
-import si.zbe.grains.recipes.MelonRecipe;
-import si.zbe.grains.recipes.MinecartRecipe;
+import si.zbe.grains.recipes.*;
 import si.zbe.grains.utils.ItemManager;
 import si.zbe.grains.utils.LanguageManager;
 import si.zbe.grains.utils.UpdateCheck;
@@ -27,10 +25,10 @@ public class Main extends JavaPlugin {
         debug  = getConfig().getBoolean("plugin.debug");
         LanguageManager.setupLanguages();
         checkPluginDependencies();
+        ItemManager.init();
         registerEvents();
         registerCommands();
         registerRecipes();
-        ItemManager.init();
         UpdateCheck.init();
         Metrics metrics = new Metrics(this, 12734);
         getLogger().info(LanguageManager.get("plugin.enabled"));
@@ -53,6 +51,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WorkbenchClick(), this);
         getServer().getPluginManager().registerEvents(new EnderChestClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryFull(), this);
+        getServer().getPluginManager().registerEvents(new CraftingLimiter(), this);
     }
 
     private void registerCommands() {
@@ -77,6 +76,19 @@ public class Main extends JavaPlugin {
             if (debug) getLogger().info("Melon recipe has been loaded.");
         }
 
+        if (getConfig().getBoolean("recipes.workbench")) {
+            WorkbenchRecipe wb = new WorkbenchRecipe();
+            plugin.getServer().addRecipe(wb.getRecipe());
+            if (debug) getLogger().info("Workbench recipe has been loaded.");
+        }
+
+        if (getConfig().getBoolean("recipes.redstone")) {
+            RedstoneRecipe rr = new RedstoneRecipe();
+            plugin.getServer().addRecipe(rr.getRepeaterRecipe());
+            plugin.getServer().addRecipe(rr.getHopperRecipe());
+            if (debug) getLogger().info("Workbench recipe has been loaded.");
+        }
+
         if (getConfig().getBoolean("recipes.carpet")) {
             CarpetRecipe carpet = new CarpetRecipe();
             for (ShapedRecipe recipe : carpet.getRecipes()) {
@@ -90,6 +102,7 @@ public class Main extends JavaPlugin {
             plugin.getServer().addRecipe(minecart.getHopperRecipe());
             plugin.getServer().addRecipe(minecart.getChestRecipe());
             plugin.getServer().addRecipe(minecart.getFurnaceRecipe());
+            plugin.getServer().addRecipe(minecart.getBoomRecipe());
             if (debug) getLogger().info("Minecart recipe has been loaded.");
         }
     }

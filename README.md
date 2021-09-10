@@ -11,6 +11,7 @@ Its features include:
 * Additional helpful recipes
 * Portable crafting table
 * Portable ender chest
+* Full inventory notification
 
 **Grains depends on [ProtocolLib](https://github.com/dmulloy2/ProtocolLib).**
 
@@ -54,6 +55,9 @@ _**Additional**_ *(images comming soon)*
 * Hopper Minecart
 * Chest Minecart
 * Powered Minecart
+* Portable workbench
+* Repeater
+* Hopper
 
 ---
 
