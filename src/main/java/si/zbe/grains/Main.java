@@ -23,7 +23,7 @@ public class Main extends JavaPlugin {
         plugin = this;
         setConfig();
         debug  = getConfig().getBoolean("plugin.debug");
-        LanguageManager.setupLanguages();
+        LanguageManager.init();
         checkPluginDependencies();
         ItemManager.init();
         registerEvents();

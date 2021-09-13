@@ -26,7 +26,7 @@ public class UpdateCheck {
 
     private static void checkForUpdates() {
         if (version == null) {
-            Main.plugin.getLogger().info("Error fetching latest git release.");
+            Main.plugin.getLogger().severe("Error fetching latest git release.");
             return;
         }
 

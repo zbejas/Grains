@@ -112,10 +112,11 @@ Permissions
 Permissions | Usage
 --- | ---
 grains.* | Everything grains
-grains.admin | Grains admin command
+grains.admin | Grains admin command + on join spam
 grains.armor | Right-click armor change
 grains.crops | Right-click crop harvest
 grains.workbench | Portable workbench command and usage
+grains.enderchest | Portable enderchest command and usage
 
 Support the project
 ===
