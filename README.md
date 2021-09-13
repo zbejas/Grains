@@ -76,7 +76,7 @@ A couple of recipes to make redstoning easier.
 
 _**Portable workbench**_
 
-Instead of using `/wb`, you can craft the portable workbench.
+Instead of using `/gwb`, you can craft the portable workbench.
 
 ![Gif broken](https://imgur.com/9T49MNw.png)
 
@@ -91,7 +91,7 @@ You can leash villagers! Just dont hang them, they are alive too!
 
 
 #### Crafting table
-Players can use **/workbench** to change a normal crafting table to a portable one. After that a crafting table is just a right-click away.
+Players can use `/gwb` to change a normal crafting table to a portable one. After that a crafting table is just a right-click away.
 
 ![Gif broken](https://i.imgur.com/GGpMHbm.gif)
 ---
