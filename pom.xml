@@ -6,7 +6,7 @@
 
     <groupId>si.zbe</groupId>
     <artifactId>Grains</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <packaging>jar</packaging>
 
     <name>Grains</name>

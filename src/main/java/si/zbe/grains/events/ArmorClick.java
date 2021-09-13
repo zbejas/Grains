@@ -21,6 +21,11 @@ public class ArmorClick implements Listener {
 
             if (isHelmet(hand.getType())) {
                 if (p.getInventory().getHelmet() != null) {
+
+                    if (e.getAction() == Action.RIGHT_CLICK_BLOCK && hand.getType() == Material.CARVED_PUMPKIN) {
+                        return;
+                    }
+
                     ItemStack helmet = p.getInventory().getHelmet();
                     helmet.setItemMeta(helmet.getItemMeta());
 

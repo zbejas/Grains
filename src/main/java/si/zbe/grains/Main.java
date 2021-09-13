@@ -52,6 +52,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EnderChestClick(), this);
         getServer().getPluginManager().registerEvents(new InventoryFull(), this);
         getServer().getPluginManager().registerEvents(new CraftingLimiter(), this);
+        getServer().getPluginManager().registerEvents(new JoinNotification(), this);
     }
 
     private void registerCommands() {

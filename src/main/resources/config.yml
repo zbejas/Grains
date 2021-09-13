@@ -1,5 +1,6 @@
 plugin:
   debug: false
+  on-join-notification: true
 recipes:
   chest: true
   melon: true

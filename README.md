@@ -1,5 +1,5 @@
 
-Grains
+![Title image](https://imgur.com/gX62vf7.png)
 === 
 Description
 ---
@@ -37,27 +37,48 @@ It also works on cocoa.
 I have added a bunch of useful custom recipes to improve overall gameplay.
 They can be found in the crafting book.
 _**Chest from logs**_
+
 You can craft 4 chests from any kind of log.
 
-![Image broken](https://i.imgur.com/Y0PiypX.png)
+![Image broken](https://imgur.com/1WBvcnw.gif)
 
 _**Melons to slices**_
+
 You can now cut up your own melon! No more block placing and breaking to turn melons into melon slices.
 
-![Image broken](https://i.imgur.com/nIBdTKz.png)
+![Image broken](https://imgur.com/8E7Mvoj.png)
 
 _**Dying carpets**_
+
+
 You can now dye 8 carpets with a single dye.
 
-![Gif broken](https://i.imgur.com/I2jkEPe.gif)
+![Gif broken](https://imgur.com/Bw52pnB.gif)
 
-_**Additional**_ *(images comming soon)*
+_**Minecarts**_
 * Hopper Minecart
 * Chest Minecart
 * Powered Minecart
-* Portable workbench
+* TNT Minecart
+
+![Gif broken](https://imgur.com/GogpbQK.gif)
+
+_**Redstone**_
+
+A couple of recipes to make redstoning easier.
+
 * Repeater
+
+![Gif broken](https://imgur.com/xXDcm3C.png)
 * Hopper
+
+![Gif broken](https://imgur.com/AEMSKmC.png)
+
+_**Portable workbench**_
+
+Instead of using `/wb`, you can craft the portable workbench.
+
+![Gif broken](https://imgur.com/9T49MNw.png)
 
 ---
 
