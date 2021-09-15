@@ -53,6 +53,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new InventoryFull(), this);
         getServer().getPluginManager().registerEvents(new CraftingLimiter(), this);
         getServer().getPluginManager().registerEvents(new JoinNotification(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
     }
 
     private void registerCommands() {

@@ -2,7 +2,7 @@ name: Grains
 main: si.zbe.grains.Main
 author: TheZbe
 description: 'Minecraft improved.'
-api-version: 1.17
+api-version: 1.13
 version: ${project.version}
 depend: [ProtocolLib]
 commands:
@@ -25,14 +25,19 @@ permissions:
     children:
       grains.admin: true
       grains.crops: true
+      grains.compass: true
       grains.armor: true
       grains.workbench: true
+      grains.enderchest: true
   grains.admin:
     description: 'Grains admin commands.'
     default: op
   grains.crops:
     description: 'Harvests crops on right click.'
     default: true
+  grains.compass:
+    description: 'Player recieves death compass on respawn.'
+    default: op
   grains.armor:
     description: 'Replaces armor on right-click.'
     default: true

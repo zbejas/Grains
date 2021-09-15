@@ -2,10 +2,8 @@ package si.zbe.grains.utils;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
-import java.util.List;
 import java.util.Map;
 import ca.fuzzlesoft.JsonParse;
 import si.zbe.grains.Main;

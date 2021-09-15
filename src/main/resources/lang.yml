@@ -13,7 +13,7 @@ plugin:
     reload: " - /grs reload -> Reloads Grains config files."
     reload-success: "Configuration and language file reloaded successfully."
 compass:
-  reset: "[Grains] Your compass has been reset to default location."
+  reset: "[Grains] Your compass has been reset to spawn."
 workbench:
   wrong-item: "[Grains] You need to have a crafting table in your main hand."
   lore: "A to-go crafting table."

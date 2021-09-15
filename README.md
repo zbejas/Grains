@@ -99,6 +99,13 @@ Players can use `/gwb` to change a normal crafting table to a portable one. Afte
 #### Armor Switch
 You can right-click to equip armor. You can't right-click to switch that equipped armor. **NO LONGER!**
  
+
+---
+
+#### Compass
+When a player respawns, they get a compass with their location in the lore. The compass points to the location of players death. With a right-click the player resets compass back to world spawn.
+
+
 ---
 
 
@@ -115,6 +122,7 @@ grains.* | Everything grains
 grains.admin | Grains admin command + on join spam
 grains.armor | Right-click armor change
 grains.crops | Right-click crop harvest
+grains.compass | Death location compass on respawn
 grains.workbench | Portable workbench command and usage
 grains.enderchest | Portable enderchest command and usage
 
