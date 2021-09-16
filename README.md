@@ -12,6 +12,7 @@ Its features include:
 * Portable crafting table
 * Portable ender chest
 * Full inventory notification
+* Death compass
 
 **Grains depends on [ProtocolLib](https://github.com/dmulloy2/ProtocolLib).**
 

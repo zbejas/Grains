@@ -7,7 +7,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareItemCraftEvent;
 import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.utils.ItemManager;
-import si.zbe.grains.utils.Messages;
 
 public class CraftingLimiter implements Listener {
     @EventHandler
@@ -21,7 +20,7 @@ public class CraftingLimiter implements Listener {
 
             if (result == null) return;
 
-            if (result.equals(ItemManager.workbench)) return;
+            if (!result.equals(ItemManager.workbench)) return;
         } catch (NullPointerException ex) {
             return;
         }
