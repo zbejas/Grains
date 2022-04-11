@@ -22,6 +22,11 @@ public class Grains implements CommandExecutor, TabCompleter {
         this.plugin = plugin;
     }
 
+    // ! This command is used by the admins to:
+    // ! - Reload the plugin
+    // ! - Check for updates
+    // ! - Check for version
+    // ! -------------------------------------
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!sender.hasPermission("grains.admin")) {
             sender.sendMessage(ChatColor.RED + Messages.no_permission_command);
@@ -34,6 +39,7 @@ public class Grains implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        // ! Reload the plugin
         if (args[0].equalsIgnoreCase("reload")) {
             Main.plugin.reloadConfig();
             LanguageManager.reloadLanguage();
@@ -41,6 +47,7 @@ public class Grains implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        // ! Check for version and latest version
         if (args[0].equalsIgnoreCase("version")) {
             sender.sendMessage(ChatColor.GREEN + "Grains version: " + ChatColor.GOLD + Main.plugin.getDescription().getVersion());
             sender.sendMessage(ChatColor.GREEN + "Latest version: " + ChatColor.GOLD + UpdateCheck.version);

@@ -19,6 +19,7 @@ public class EnderChest implements CommandExecutor {
         this.plugin = plugin;
     }
 
+    // ! This command gives the player an ender chest
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "");

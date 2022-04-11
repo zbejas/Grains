@@ -2,7 +2,6 @@ package si.zbe.grains;
 
 import org.bstats.bukkit.Metrics;
 import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import si.zbe.grains.commands.EnderChest;
 import si.zbe.grains.commands.Grains;
@@ -21,15 +20,17 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+
         setConfig();
         debug  = getConfig().getBoolean("plugin.debug");
         LanguageManager.init();
-        checkPluginDependencies();
+        UpdateCheck.init();
         ItemManager.init();
+
         registerEvents();
         registerCommands();
         registerRecipes();
-        UpdateCheck.init();
+
         Metrics metrics = new Metrics(this, 12734);
         getLogger().info(LanguageManager.get("plugin.enabled"));
     }

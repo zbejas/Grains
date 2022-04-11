@@ -7,8 +7,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import si.zbe.grains.utils.ItemCollections;
 
 public class ArmorClick implements Listener {
+    // ! This event is called when a player clicks on a helmet, chestplate, leggings or boots
+    // ! stored in the ItemCollections.
     @EventHandler
     public void onArmorClick(PlayerInteractEvent e) {
         if (!e.getPlayer().hasPermission("grain.armor"))
@@ -65,18 +68,18 @@ public class ArmorClick implements Listener {
     }
 
     boolean isHelmet(Material m) {
-        return m == Material.LEATHER_HELMET || m == Material.IRON_HELMET || m == Material.CHAINMAIL_HELMET || m == Material.GOLDEN_HELMET || m == Material.DIAMOND_HELMET || m == Material.NETHERITE_HELMET || m == Material.TURTLE_HELMET || m == Material.CARVED_PUMPKIN;
+        return ItemCollections.helmets.contains(m);
     }
 
     boolean isChestplate(Material m) {
-        return m == Material.LEATHER_CHESTPLATE || m == Material.IRON_CHESTPLATE || m == Material.CHAINMAIL_CHESTPLATE || m == Material.GOLDEN_CHESTPLATE || m == Material.DIAMOND_CHESTPLATE || m == Material.NETHERITE_CHESTPLATE;
+        return ItemCollections.chestplates.contains(m);
     }
 
     boolean isLeggings(Material m) {
-        return m == Material.LEATHER_LEGGINGS || m == Material.IRON_LEGGINGS || m == Material.CHAINMAIL_LEGGINGS || m == Material.GOLDEN_LEGGINGS || m == Material.DIAMOND_LEGGINGS || m == Material.NETHERITE_LEGGINGS;
+        return ItemCollections.leggings.contains(m);
     }
 
     boolean isBoots(Material m) {
-        return m == Material.LEATHER_BOOTS || m == Material.IRON_BOOTS || m == Material.CHAINMAIL_BOOTS || m == Material.GOLDEN_BOOTS || m == Material.DIAMOND_BOOTS || m == Material.NETHERITE_BOOTS;
+        return ItemCollections.boots.contains(m);
     }
 }

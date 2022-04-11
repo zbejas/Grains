@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.Main;
 
 public class LeashVillager implements Listener {
+    // ! This event leashes a villager to the player who right-clicks it.
     @EventHandler
     public void onVillagerLeash(PlayerInteractEntityEvent e) {
         if (e.getRightClicked().getType() != EntityType.VILLAGER)

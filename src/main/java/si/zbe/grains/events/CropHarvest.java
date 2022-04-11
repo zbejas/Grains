@@ -105,7 +105,7 @@ public class CropHarvest implements Listener {
 
             sendServerPacket(pm, e.getPlayer(), handAnimation);
 
-            //TODO: Replace with something that doesnt ignore protection
+            //TODO: Replace with something that doesn't ignore protection, anyone reading this is welcome to send a PR
             //Main.plugin.getServer().getPluginManager().callEvent(new BlockBreakEvent(block, e.getPlayer()));
 
             // Cocoa needs directions

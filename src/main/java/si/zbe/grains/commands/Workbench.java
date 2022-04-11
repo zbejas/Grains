@@ -23,6 +23,7 @@ public class Workbench implements CommandExecutor {
         this.plugin = plugin;
     }
 
+    // ! This command gives the player a workbench
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "");

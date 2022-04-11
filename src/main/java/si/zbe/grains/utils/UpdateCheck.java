@@ -24,14 +24,31 @@ public class UpdateCheck {
 
     private static void checkForUpdates() {
         if (version == null) {
-            Main.plugin.getLogger().severe("Error fetching latest git release.");
+            Main.plugin.getLogger().severe(LanguageManager.get("plugin.update.fail"));
             return;
         }
 
-        if (Main.plugin.getDescription().getVersion().equalsIgnoreCase(version)) {
-            Main.plugin.getLogger().info(LanguageManager.get("plugin.update-latest"));
+        // Parse version
+        String[] versionSplit = version.split("\\.");
+        int major = Integer.parseInt(versionSplit[0]);
+        int minor = Integer.parseInt(versionSplit[1]);
+        int patch = Integer.parseInt(versionSplit[2]);
+
+        // Parse current version
+        String[] currentVersionSplit = Main.plugin.getDescription().getVersion().split("\\.");
+        int currentMajor = Integer.parseInt(currentVersionSplit[0]);
+        int currentMinor = Integer.parseInt(currentVersionSplit[1]);
+        int currentPatch = Integer.parseInt(currentVersionSplit[2]);
+
+        // Compare versions
+        if (major > currentMajor) {
+            Main.plugin.getLogger().info(MessageFormat.format(LanguageManager.get("plugin.update.major"), version));
+        } else if (major == currentMajor && minor > currentMinor) {
+            Main.plugin.getLogger().info(MessageFormat.format(LanguageManager.get("plugin.update.minor"), version));
+        } else if (major == currentMajor && minor == currentMinor && patch > currentPatch) {
+            Main.plugin.getLogger().info(MessageFormat.format(LanguageManager.get("plugin.update.patch"), version));
         } else {
-            Main.plugin.getLogger().info(MessageFormat.format(LanguageManager.get("plugin.update"), version));
+            Main.plugin.getLogger().info(LanguageManager.get("plugin.update.latest"));
         }
     }
 

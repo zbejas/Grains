@@ -5,9 +5,14 @@ plugin:
     command: "You do not have permission to use this command!"
     craft: "You do not have permission to craft this item!"
   invalid-input: "Invalid input. Please check command help."
-  update: "An update has been found! Verison: {0}"
-  update-latest: "You are running the latest Grains version."
-  update-fail: "Failed to check for updates."
+  update:
+    default: "An update has been found! Verison: {0}"
+    major: "A major update has been found! Verison: {0}"
+    minor: "A minor update has been found! Verison: {0}"
+    patch: "A patch update has been found! Verison: {0}"
+    none: "No update has been found."
+    latest: "You are already using the latest version."
+    fail: "Failed to check for updates."
   grains:
     info: "Grains admin commands:"
     reload: " - /grs reload -> Reloads Grains config files."

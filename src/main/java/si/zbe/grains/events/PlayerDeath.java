@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class PlayerDeath implements Listener {
     private static HashMap<Player, Location> locationHashMap = new HashMap<Player, Location>();
 
-
+    // ! This event stores the location of the player when he dies
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
         Player p = e.getEntity().getPlayer();
@@ -32,6 +32,7 @@ public class PlayerDeath implements Listener {
         return;
     }
 
+    //! This event changes the player's compass to the location he died
     @EventHandler
     public void onRespawn(PlayerRespawnEvent e) {
         Player p = e.getPlayer();
@@ -63,6 +64,7 @@ public class PlayerDeath implements Listener {
         }, 1L);
     }
 
+    // ! This event allows the player to reset his compass to the world spawn
     @EventHandler
     public void onCompassClick(PlayerInteractEvent e) {
         Player p = e.getPlayer();

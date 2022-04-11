@@ -12,46 +12,47 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
+/*
+  ?  ItemManager needs to be loaded before events, commands and recipes.
+ */
+
 public class ItemManager {
     public static ItemStack workbench;
     public static ItemStack enderchest;
-    public static ItemStack compass;
 
     public static void init() {
+        ItemCollections.init();
         createWorkbench();
         createEnderChest();
     }
 
+    // TODO: add glow to all items
+    private static ItemStack addGlow(ItemStack item) {
+        ItemMeta meta = item.getItemMeta();
+        meta.addEnchant(Enchantment.DURABILITY, 1, true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        return item;
+    }
+
     private static void createWorkbench() {
-        ItemStack item = new ItemStack(Material.CRAFTING_TABLE, 1);
+        ItemStack item = addGlow(new ItemStack(Material.CRAFTING_TABLE, 1));
         ItemMeta itemmeta = item.getItemMeta();
         ArrayList<String> lore = new ArrayList<String>();
         lore.add(ChatColor.GREEN + LanguageManager.get("workbench.lore"));
         itemmeta.setDisplayName(ChatColor.GOLD + LanguageManager.get("workbench.name"));
         itemmeta.setLore(lore);
-        //itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.addUnsafeEnchantment(Enchantment.WATER_WORKER, 1);
         item.setItemMeta(itemmeta);
         workbench = item;
     }
     private static void createEnderChest() {
-        ItemStack item = new ItemStack(Material.ENDER_CHEST, 1);
+        ItemStack item = addGlow(new ItemStack(Material.ENDER_CHEST, 1));
         ItemMeta itemmeta = item.getItemMeta();
         ArrayList<String> lore = new ArrayList<String>();
         lore.add(ChatColor.GREEN + LanguageManager.get("enderchest.lore"));
         itemmeta.setDisplayName(ChatColor.GOLD + LanguageManager.get("enderchest.name"));
         itemmeta.setLore(lore);
-        itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.addUnsafeEnchantment(Enchantment.WATER_WORKER, 1);
         item.setItemMeta(itemmeta);
         enderchest = item;
-    }
-
-    public static void addGlow(ItemStack stack) {
-        if (stack == null) return;
-        NbtCompound compound = (NbtCompound) NbtFactory.fromItemTag(stack);
-        compound.put(NbtFactory.ofList("ench"));
-
-
     }
 }

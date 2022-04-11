@@ -11,6 +11,8 @@ import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.utils.ItemManager;
 
 public class EnderChestClick implements Listener {
+    // ! This event is called when a player right-clicks on an ender chest
+    // ! and opens it.
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
         Player p = e.getPlayer();

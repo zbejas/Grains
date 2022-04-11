@@ -12,6 +12,8 @@ import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.utils.ItemManager;
 
 public class WorkbenchClick implements Listener {
+    // ! This event is called when a player clicks on a workbench
+    // ! and opens the workbench inventory.
     @EventHandler
     public void onRightClick(PlayerInteractEvent e) {
         Player p = e.getPlayer();

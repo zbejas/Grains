@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import si.zbe.grains.utils.ItemManager;
 
 public class CraftingLimiter implements Listener {
+    // ! This event prevents players without the permission from crafting our items
     @EventHandler
     public void onCraft(PrepareItemCraftEvent e) {
         Player p = (Player) e.getView().getPlayer();
